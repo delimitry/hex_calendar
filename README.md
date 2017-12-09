@@ -21,7 +21,7 @@ Generates hexadecimal calendar for 2018 with SPbPython logo:
 
 Requirements:
 --------------
-PIL / Pillow module
+Pillow (PIL fork)
 
 License:
 --------
