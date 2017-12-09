@@ -16,6 +16,9 @@ Usage example:
 --------------
 `python hex_calendar.py`
 
+Generates hexadecimal calendar for 2018 with SPbPython logo:
+![Hexadecimal calendar for a year 2018](https://github.com/delimitry/hex_calendar/blob/master/hex_calendar_2018.png)
+
 Requirements:
 --------------
 PIL / Pillow module
