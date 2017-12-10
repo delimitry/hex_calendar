@@ -136,7 +136,7 @@ class MonthObject(object):
 
 def add_year(img, year, font, color, upper=False):
     """Add year"""
-    txt_img = Image.new('RGBA', (100, 100), 'black')
+    txt_img = Image.new('RGBA', (100, 100))
     txt_img_draw = ImageDraw.Draw(txt_img)
     year_text = '{:x}'.format(year)
     if upper:
