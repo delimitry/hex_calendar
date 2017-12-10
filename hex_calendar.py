@@ -159,7 +159,7 @@ def add_image(img, image_path):
     new_size = image.size
     while new_size[0] > img.size[0] or new_size[1] > MONTHS_TOP:
         new_size = (int(new_size[0] * 0.75), int(new_size[1] * 0.75))
-    image = image.resize(new_size)
+    image = image.resize(new_size, Image.ANTIALIAS)
     # calculate coordinates
     x = (img.size[0] - image.size[0]) // 2
     y = (MONTHS_TOP - image.size[1]) // 2
