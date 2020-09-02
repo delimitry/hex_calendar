@@ -225,7 +225,7 @@ def main():
 
     img = Image.new('RGB', (width, height), 'black')
 
-    year = 2018
+    year = datetime.date.today().year
     make_hex_calendar(img, year)
 
     img.save('hex_calendar_{}.png'.format(year))
