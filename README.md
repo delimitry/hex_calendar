@@ -14,7 +14,15 @@ The tool was inspired by [this](https://ipfs.io/ipfs/QmSutLZU3c2nUAXs5ojLJPTyErU
 
 Usage example:
 --------------
-`python hex_calendar.py`
+```
+$ python hex_calendar.py [year (default=current)]
+```
+Examples:
+```
+$ python hex_calendar.py
+or
+$ python hex_calendar.py 2018
+```
 
 Generates hexadecimal calendar for 2018 with SPbPython logo:
 ![Hexadecimal calendar for a year 2018](https://github.com/delimitry/hex_calendar/blob/master/hex_calendar_2018.png)
