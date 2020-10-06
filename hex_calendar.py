@@ -4,11 +4,12 @@
 A tool for generation hex calendar for a year
 """
 
-import os
 import calendar
 import datetime
-from PIL import Image, ImageDraw, ImageFont, ImageOps
+import os
+import sys
 
+from PIL import Image, ImageDraw, ImageFont
 
 MONTHS_LEFT = 30
 MONTHS_TOP = 390
@@ -171,10 +172,10 @@ def add_months(img, year, **kwargs):
     img_draw = ImageDraw.Draw(img)
     for month_index in range(1, 12 + 1):
         month_object = MonthObject(
-            draw=img_draw, 
-            year=year, 
-            month=month_index, 
-            x=MONTHS_LEFT + MONTH_HORIZONTAL_STEP * ((month_index - 1) % MONTHS_IN_ROW), 
+            draw=img_draw,
+            year=year,
+            month=month_index,
+            x=MONTHS_LEFT + MONTH_HORIZONTAL_STEP * ((month_index - 1) % MONTHS_IN_ROW),
             y=MONTHS_TOP + MONTH_VERTICAL_STEP * ((month_index - 1) // MONTHS_IN_ROW),
             **kwargs
         )
@@ -200,17 +201,17 @@ def make_hex_calendar(img, year):
     days_upper = False
 
     add_months(
-        img, 
-        year, 
-        month_font=month_font, 
-        week_font=week_font, 
-        month_color=month_color, 
+        img,
+        year,
+        month_font=month_font,
+        week_font=week_font,
+        month_color=month_color,
         week_color=week_color,
-        weekend_color=weekend_color, 
-        days_color=days_color, 
-        first_weekday=first_weekday, 
-        month_upper=month_upper, 
-        week_upper=week_upper, 
+        weekend_color=weekend_color,
+        days_color=days_color,
+        first_weekday=first_weekday,
+        month_upper=month_upper,
+        week_upper=week_upper,
         days_upper=days_upper
     )
 
@@ -225,7 +226,15 @@ def main():
 
     img = Image.new('RGB', (width, height), 'black')
 
-    year = datetime.date.today().year
+    # use current year if not passed
+    if len(sys.argv) < 2:
+        year = datetime.date.today().year
+    else:
+        year = int(sys.argv[1])
+        if not (1970 <= year <= 9999):
+            print('Please provide year from 1970 to 9999')
+            exit()
+
     make_hex_calendar(img, year)
 
     img.save('hex_calendar_{}.png'.format(year))
