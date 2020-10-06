@@ -10,7 +10,7 @@ The tool is written in Python with usage of Pillow for generating and saving of 
 
 Supports both Python 2 and Python 3.
 
-The tool was inspired by [this](https://linux.pictures/projects/python-hex-calendar-for-year-0x7e2) project.
+The tool was inspired by [this](https://ipfs.io/ipfs/QmSutLZU3c2nUAXs5ojLJPTyErUAp2teYVYGGkwZxFFkpc) [old link](https://linux.pictures/projects/python-hex-calendar-for-year-0x7e2) project.
 
 Usage example:
 --------------
